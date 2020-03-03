@@ -1,6 +1,7 @@
 package learn.queue;
 
-import com.shardhar.learn.linkedList.ListNode;
+
+import learn.linkedList.ListNode;
 
 public class LinkedQueue {
     private int length;
