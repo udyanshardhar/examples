@@ -1,4 +1,4 @@
-package com.company;
+package learn.company;
 
 public class SumOfTwoNumberEqualToTarget {
         public int strStr(String haystack, String needle) {
