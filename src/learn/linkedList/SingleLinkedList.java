@@ -1,5 +1,7 @@
 package learn.linkedList;
 
+import learn.ListNode;
+
 public class SingleLinkedList {
     private ListNode head;
     private int length;
@@ -18,7 +20,7 @@ public class SingleLinkedList {
     }
 
     public synchronized void insertAtBegin(ListNode newNode){
-        newNode.setNext(head);
+        newNode.nextNode = head;
         head = newNode;
         length++;
     }
@@ -26,12 +28,12 @@ public class SingleLinkedList {
     public synchronized void insertAtEnd(ListNode newNode){
         if(head != null){
             ListNode currentNode = head;
-            while (currentNode.getNext() != null){
-                System.out.println("current node is =>" + currentNode.getData());
-                currentNode = currentNode.getNext();
+            while (currentNode.nextNode != null){
+                System.out.println("current node is =>" + currentNode.value);
+                currentNode = currentNode.nextNode;
             }
-            newNode.setNext(null);
-            currentNode.setNext(newNode);
+            newNode.nextNode = null;
+            currentNode.nextNode = newNode;
         }else {
             head = newNode;
         }
@@ -49,17 +51,17 @@ public class SingleLinkedList {
 
         if (position == 0) {
             ListNode tempNode = new ListNode(data);
-            tempNode.setNext(head);
+            tempNode.nextNode = head;
             head = tempNode;
             length++;
         }else {
             ListNode currentNode = head;
             for(int i = 1; i < position; i++) {
-                currentNode =currentNode.getNext();
+                currentNode =currentNode.nextNode;
             }
             ListNode newNode = new ListNode(data);
-            newNode.setNext(currentNode.getNext());
-            currentNode.setNext(newNode);
+            newNode.nextNode = currentNode.nextNode;
+            currentNode.nextNode = newNode;
         }
         length++;
     }
@@ -68,8 +70,8 @@ public class SingleLinkedList {
 
         ListNode temp = head;
         if(temp != null){
-            head =temp.getNext();
-            temp.setNext(null);
+            head =temp.nextNode;
+            temp.nextNode = null;
         }
         return temp;
 
@@ -79,18 +81,18 @@ public class SingleLinkedList {
         if(head == null)
             return null;
 
-        ListNode secondLastNode = head, lastNode = head.getNext();
+        ListNode secondLastNode = head, lastNode = head.nextNode;
         if(lastNode == null){
             head = null;
             return secondLastNode;
         }else {
-         while (lastNode.getNext() != null)  {
+         while (lastNode.nextNode != null)  {
              secondLastNode = lastNode;
-             lastNode = lastNode.getNext();
+             lastNode = lastNode.nextNode;
          }
 
         }
-        secondLastNode.setNext(null);
+        secondLastNode.nextNode = null;
         return lastNode;
     }
 
@@ -102,16 +104,16 @@ public class SingleLinkedList {
             head = null;
             return true;
         }
-        ListNode previousNode=head, currentNode = head.getNext();
-        while (currentNode != null && currentNode.getNext() != null){
+        ListNode previousNode=head, currentNode = head.nextNode;
+        while (currentNode != null && currentNode.nextNode != null){
             if(currentNode.equals(nodeToBeRemoved)){
-                previousNode.setNext(currentNode.getNext());
-                currentNode.setNext(null);
+                previousNode.nextNode = currentNode.nextNode;
+                currentNode.nextNode = null;
                 currentNode = null;
                 return true;
             }
             previousNode = currentNode;
-            currentNode = currentNode.getNext();
+            currentNode = currentNode.nextNode;
         }
 
         return false;
@@ -131,15 +133,15 @@ public class SingleLinkedList {
             return;
 
         if(position == 0){
-            head=  head.getNext();
+            head=  head.nextNode;
         }else {
 
             ListNode temp = head;
             for(int i=1; i<position; i++){
-                temp = temp.getNext();
+                temp = temp.nextNode;
             }
 
-            temp.setNext(temp.getNext().getNext());
+            temp.nextNode = temp.nextNode.nextNode;
         }
         length--;
 
@@ -151,11 +153,11 @@ public class SingleLinkedList {
             return result = result + "]";
         }
 
-        result = result + head.getData();
-        ListNode temp  = head.getNext();
+        result = result + head.value;
+        ListNode temp  = head.nextNode;
         while(temp != null){
-            result = result + "->" + temp.getData();
-            temp = temp.getNext();
+            result = result + "->" + temp.value;
+            temp = temp.nextNode;
         }
         return result + "]";
     }

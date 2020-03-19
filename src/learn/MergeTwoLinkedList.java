@@ -1,18 +1,6 @@
 package learn;
 
 
-class ListNode {
-    public int value;
-    public ListNode nextNode;
-    public ListNode(int value){
-        this.value =value;
-    }
-    public ListNode(int value, ListNode nextNode){
-        this.value =value;
-        this.nextNode = nextNode;
-    }
-
-}
 public class MergeTwoLinkedList {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(3, new ListNode(7, new ListNode(11)));
