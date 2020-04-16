@@ -1,5 +1,7 @@
 package com.us.solutions;
 
+import com.us.solutions.tree.Palindrome;
+
 import java.util.Arrays;
 
 public class LinksToAllProblems {
@@ -28,5 +30,7 @@ public class LinksToAllProblems {
         FindDuplicateCharactersInString.printDuplicateCharacters("dfgfdsdg");
         FindPermutationOfString.permutation("", "abc");
         new FindAllSubString().findAllSubString("dsfdsff");
+        CheckStringMadeOfNumber.checkStringMadeOfNumber(new String[]{"123", "-123" , "123.12", "abcd123"});
+        System.out.println(Palindrome.isPalindromString("abba"));
     }
 }

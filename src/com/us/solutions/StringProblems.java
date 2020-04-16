@@ -5,85 +5,11 @@ import java.util.regex.Pattern;
 
 public class StringProblems {
     public static void main(String[] args) {
-        printDuplicateCharacters("Programming");
-        printDuplicateCharacters("Combination");
-        printDuplicateCharacters("Java");
         permutation("abc");
         findAllSubString("abc");
     }
 
 
-
-    /* * Find all duplicate characters in a String and print each of them. */
-    public static void printDuplicateCharacters(String word) {
-        char[] characters = word.toCharArray();
-        // build HashMap with character and number of times they appear in String
-        Map<Character, Integer> charMap = new HashMap<Character, Integer>();
-        for (Character ch : characters) {
-            if (charMap.containsKey(ch)) {
-                charMap.put(ch, charMap.get(ch) + 1);
-            } else {
-                charMap.put(ch, 1);
-            }
-        }
-
-        // Iterate through HashMap to print all duplicate characters of String
-        Set<Map.Entry<Character, Integer>> entrySet = charMap.entrySet();
-        System.out.printf("List of duplicate characters in String '%s' %n", word);
-        for (Map.Entry<Character, Integer> entry : entrySet) {
-            if (entry.getValue() > 1) {
-                System.out.printf("%s : %d %n", entry.getKey(), entry.getValue());
-            }
-        }
-
-    }
-
-    // How to check if two Strings are anagrams of each other
-    /*
-     * One way to find if two Strings are anagram in Java. This method
-     * assumes both arguments are not null and in lowercase.
-     *
-     * @return true, if both String are anagram
-     */
-    public static boolean isAnagram1(String word, String anagram){
-        if(word.length() != anagram.length()){
-            return false;
-        }
-
-        char[] chars = word.toCharArray();
-
-        for(char c : chars){
-            int index = anagram.indexOf(c);
-            if(index != -1){
-                anagram = anagram.substring(0,index) + anagram.substring(index +1, anagram.length());
-            }else{
-                return false;
-            }
-        }
-        return anagram.isEmpty();
-    }
-    public static boolean iAnagram2(String word, String anagram){
-        char[] charFromWord = word.toCharArray();
-        char[] charFromAnagram = anagram.toCharArray();
-        Arrays.sort(charFromWord);
-        Arrays.sort(charFromAnagram);
-
-        return Arrays.equals(charFromWord, charFromAnagram);
-    }
-    public static boolean checkAnagram3(String first, String second){
-        char[] characters = first.toCharArray();
-        StringBuilder sbSecond = new StringBuilder(second);
-
-        for(char ch : characters){
-            int index = sbSecond.indexOf("" + ch);
-            if(index != -1){
-                sbSecond.deleteCharAt(index);
-            }else{
-                return false;
-            }
-        }
-        return sbSecond.length()==0 ? true : false;
-    }
 
 
 
@@ -178,21 +104,6 @@ public class StringProblems {
         }
 
         return strBuilder.toString();
-    }
-
-    public static String reverse2Recursively(String str) {
-
-        //base case to handle one char string and empty string
-        if (str.length() < 2) {
-            return str;
-        }
-
-        return reverse2Recursively(str.substring(1)) + str.charAt(0);
-
-    }
-
-    public static String reverseString3(String str) {
-        return new StringBuffer(str).reverse().toString();
     }
 
 

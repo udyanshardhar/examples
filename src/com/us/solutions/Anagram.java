@@ -1,5 +1,6 @@
 package com.us.solutions;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Anagram {
@@ -42,4 +43,52 @@ public class Anagram {
 
         return true;
     }
+
+    // How to check if two Strings are anagrams of each other
+    /*
+     * One way to find if two Strings are anagram in Java. This method
+     * assumes both arguments are not null and in lowercase.
+     *
+     * @return true, if both String are anagram
+     */
+    public static boolean isAnagram1(String word, String anagram){
+        if(word.length() != anagram.length()){
+            return false;
+        }
+
+        char[] chars = word.toCharArray();
+
+        for(char c : chars){
+            int index = anagram.indexOf(c);
+            if(index != -1){
+                anagram = anagram.substring(0,index) + anagram.substring(index +1, anagram.length());
+            }else{
+                return false;
+            }
+        }
+        return anagram.isEmpty();
+    }
+    public static boolean iAnagram2(String word, String anagram){
+        char[] charFromWord = word.toCharArray();
+        char[] charFromAnagram = anagram.toCharArray();
+        Arrays.sort(charFromWord);
+        Arrays.sort(charFromAnagram);
+
+        return Arrays.equals(charFromWord, charFromAnagram);
+    }
+    public static boolean checkAnagram3(String first, String second){
+        char[] characters = first.toCharArray();
+        StringBuilder sbSecond = new StringBuilder(second);
+
+        for(char ch : characters){
+            int index = sbSecond.indexOf("" + ch);
+            if(index != -1){
+                sbSecond.deleteCharAt(index);
+            }else{
+                return false;
+            }
+        }
+        return sbSecond.length()==0 ? true : false;
+    }
+
 }
