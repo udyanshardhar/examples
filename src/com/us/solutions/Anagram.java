@@ -14,7 +14,7 @@ public class Anagram {
         System.out.println(new Anagram().isAnagram("uuuu", "uuuu"));
     }
 
-    private boolean isAnagram(String inputKey1, String inputKey2) {
+    public boolean isAnagram(String inputKey1, String inputKey2) {
         if(inputKey1 == null || inputKey2 == null || (inputKey1.length() != inputKey2.length())){
             return false;
         }

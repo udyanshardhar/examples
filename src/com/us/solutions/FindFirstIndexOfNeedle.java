@@ -8,7 +8,7 @@ public class FindFirstIndexOfNeedle {
         System.out.println(new FindFirstIndexOfNeedle().findNeedle(heys, needle));
     }
 
-    private int findNeedle(String heys, String needle) {
+    public int findNeedle(String heys, String needle) {
         if(needle == null || needle.isEmpty())
             return 0;
         int needleLength = needle.length();

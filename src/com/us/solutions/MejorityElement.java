@@ -7,7 +7,7 @@ public class MejorityElement {
         System.out.println(new MejorityElement().majorityElement(new int[]{1, 3, 3, 3, 3, 2, 3, 4}));
     }
 
-    private int majorityElement(int[] nums) {
+    public int majorityElement(int[] nums) {
         int length = nums.length;
         if(length == 1)
             return nums[0];

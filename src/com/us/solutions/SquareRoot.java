@@ -5,7 +5,7 @@ public class SquareRoot {
         System.out.println(new SquareRoot().findsqrt(16));
     }
 
-    private int findsqrt(int x) {
+    public int findsqrt(int x) {
         int leftNum = 1;
         int rightNum = x;
         int medium;

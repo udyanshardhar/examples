@@ -28,7 +28,7 @@ public class RomanToInteger {
         System.out.println(new RomanToInteger().convert("LVIII"));
     }
 
-    private int convert(String s) {
+    public int convert(String s) {
          if(s == null || s.trim().length() == 0) {
              return 0;
          }

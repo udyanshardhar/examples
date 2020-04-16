@@ -12,7 +12,7 @@ public class ReverseInteger {
 
     }
 
-    private int reverseInteger(int input) {
+    public int reverseInteger(int input) {
         int flag = input < 0 ? -1 : 1;
         int current = input * flag;
         int reverse = 0;

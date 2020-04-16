@@ -6,7 +6,7 @@ public class ReverseString {
         System.out.println(new ReverseString().reverse("dsfsdfsdf"));
     }
 
-    private String reverse(String input) {
+    public String reverse(String input) {
         char[] charArray = input.toCharArray();
         int startIndex =0;
         int lastIndex = charArray.length-1;

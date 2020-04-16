@@ -2,11 +2,10 @@ package com.us.solutions;
 
 public class MaxSubArray {
     public static void main(String[] args) {
-        int[] input = new int[]{-1, 2, 3, -5, 4};
-        System.out.println(new MaxSubArray().findMaxArray(input));
+        System.out.println(new MaxSubArray().findMaxArray(new int[]{-1, 2, 3, -5, 4}));
     }
 
-    private int findMaxArray(int[] nums) {
+    public int findMaxArray(int[] nums) {
         int globalSum = nums[0];
         for(int i =0; i <nums.length; i++){
             int currentSum = nums[i];

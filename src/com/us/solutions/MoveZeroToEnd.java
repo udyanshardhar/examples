@@ -6,7 +6,7 @@ public class MoveZeroToEnd {
         System.out.println(move);
     }
 
-    private int[] move(int[] ints) {
+    public int[] move(int[] ints) {
         int explore = 0;
         int anchor = 0;
         while(explore < ints.length){

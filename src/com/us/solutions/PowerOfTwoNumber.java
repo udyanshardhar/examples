@@ -11,7 +11,7 @@ public class PowerOfTwoNumber {
 
     }
 
-    private boolean isPowerOfTwo(int n) {
+    public boolean isPowerOfTwo(int n) {
         int powerOf = 2;
         if(n < powerOf){
             return false;

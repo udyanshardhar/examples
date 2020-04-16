@@ -1,12 +1,11 @@
 package com.us.solutions;
 
-public class RemoveElementInPlace {
+public class RemoveElementFromArrayInPlace {
     public static void main(String[] args) {
-        int[] input = new int []{1, 1, 5, 5, 5, 7};
-        System.out.println(new RemoveElementInPlace().removeElementInPlace(input, 5));
+        System.out.println(new RemoveElementFromArrayInPlace().removeElementInPlace(new int []{1, 1, 5, 5, 5, 7}, 5));
     }
 
-    private int removeElementInPlace(int[] input , int in) {
+    public int removeElementInPlace(int[] input , int in) {
 
         int p1 =0;
         for (int p2 =0; p2< input.length; p2++){

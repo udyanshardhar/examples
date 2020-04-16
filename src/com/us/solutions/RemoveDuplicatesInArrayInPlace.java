@@ -1,13 +1,13 @@
 package com.us.solutions;
 
-public class RemoveDuplicateInPlace {
+public class RemoveDuplicatesInArrayInPlace {
 
     public static void main(String[] args) {
         int[] input = new int []{1, 1, 5, 5, 5, 7};
-                System.out.println(new RemoveDuplicateInPlace().removeDuplicateInPlace(input));
+                System.out.println(new RemoveDuplicatesInArrayInPlace().removeDuplicateInPlace(input));
     }
 
-    private int removeDuplicateInPlace(int[] input) {
+    public int removeDuplicateInPlace(int[] input) {
 
         int p1 =0;
         for (int p2 =1; p2< input.length; p2++){

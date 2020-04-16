@@ -6,7 +6,7 @@ public class PrimeCount {
         System.out.println(new PrimeCount().count(100));
     }
 
-    private int count(int n) {
+    public int count(int n) {
         boolean [] nums = new boolean[n];
         for(int i = 0; i <n; i++){
             nums[i] = true;

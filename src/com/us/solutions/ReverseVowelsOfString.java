@@ -5,11 +5,11 @@ import java.util.List;
 
 public class ReverseVowelsOfString {
     public static void main(String[] args) {
-        System.out.println(new ReverseVowelsOfString().reverse("hello"));
-        System.out.println(new ReverseVowelsOfString().reverse("leetcode"));
+        System.out.println(new ReverseVowelsOfString().reverseVowelsOfString("hello"));
+        System.out.println(new ReverseVowelsOfString().reverseVowelsOfString("leetcode"));
     }
 
-    private String reverse(String s) {
+    public String reverseVowelsOfString(String s) {
         char[] in = s.toCharArray();
         int startIndex = 0;
         int lastIndex = s.length()-1;
