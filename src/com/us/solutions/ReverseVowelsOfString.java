@@ -1,5 +1,6 @@
 package com.us.solutions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReverseVowelsOfString {
@@ -25,7 +26,6 @@ public class ReverseVowelsOfString {
                 if(!isVowel(in[lastIndex]))
                     lastIndex--;
             }
-
         }
         String result = "";
         for(char ch : in){
@@ -33,9 +33,13 @@ public class ReverseVowelsOfString {
         }
         return result;
     }
-
     private boolean isVowel(char c) {
-        List<Character> vowels = List.of('a', 'i', 'o', 'u', 'e');
+        List<Character> vowels = new ArrayList<Character>();
+        vowels.add('a');
+        vowels.add('i');
+        vowels.add('o');
+        vowels.add('u');
+        vowels.add('e');
         return vowels.contains(c);
     }
 }

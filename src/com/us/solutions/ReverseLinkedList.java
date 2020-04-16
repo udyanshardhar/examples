@@ -1,23 +1,5 @@
 package com.us.solutions;
 
-class Node {
-    int value;
-    Node nextNode;
-   public Node(int value) {
-       this.value = value;
-       this.nextNode = null;
-   }
-    public Node(int value, Node nextNode) {
-        this.value = value;
-        this.nextNode = nextNode;
-    }
-
-    @Override
-    public String toString() {
-        return String.valueOf(this.value);
-    }
-}
-
 public class ReverseLinkedList {
     public static void main(String[] args) {
         Node root = new Node(1, new Node(2, new Node(3)));

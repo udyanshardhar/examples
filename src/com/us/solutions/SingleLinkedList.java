@@ -8,16 +8,16 @@ public class SingleLinkedList {
 
     public void push(int data) {
         Node newNode = new Node(data);
-        newNode.next = head;
+        newNode.nextNode = head;
         head = newNode;
     }
 
     public void insertAfter(Node previousNode, int data) {
         Objects.requireNonNull(previousNode, "previous object can not be null");
         Node newNode = new Node(data);
-        Node nextNode = previousNode.next;
-        previousNode.next = newNode;
-        newNode.next = nextNode;
+        Node nextNode = previousNode.nextNode;
+        previousNode.nextNode = newNode;
+        newNode.nextNode = nextNode;
     }
 
     public void append(int data) {
@@ -28,37 +28,37 @@ public class SingleLinkedList {
         }
 
         Node lastNode = head;
-        while(lastNode.next != null){
-            lastNode =lastNode.next;
+        while(lastNode.nextNode != null){
+            lastNode =lastNode.nextNode;
         }
 
-        lastNode.next = newNode;
+        lastNode.nextNode = newNode;
     }
 
     public void deleteNode(int key){
         Node temp = head, previousNode = null;
-        if(temp != null && temp.data == key) {
-            head = temp.next;
+        if(temp != null && temp.value == key) {
+            head = temp.nextNode;
             return;
         }
 
-        while(temp != null && temp.data != key){
+        while(temp != null && temp.value != key){
             previousNode = temp;
-            temp = temp.next;
+            temp = temp.nextNode;
         }
         if (temp == null){
             return;
         }
-        previousNode.next = temp.next;
+        previousNode.nextNode = temp.nextNode;
     }
 
     public void printLinkedList(){
         StringBuilder sb = new StringBuilder();
         Node print = head;
         while (print != null){
-            sb.append(print.data);
+            sb.append(print.value);
             sb.append("--->");
-            print = print.next;
+            print = print.nextNode;
         }
         sb.deleteCharAt(sb.lastIndexOf("--->"));
 
@@ -70,9 +70,9 @@ public class SingleLinkedList {
         StringBuilder sb = new StringBuilder();
         Node print = this.head;
         while (print != null){
-            sb.append(print.data);
+            sb.append(print.value);
             sb.append("--->");
-            print = print.next;
+            print = print.nextNode;
         }
         sb.deleteCharAt(sb.lastIndexOf("--->"));
         return sb.toString();
